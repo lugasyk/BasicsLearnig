@@ -1,21 +1,21 @@
 class First(object):
-    i1 = 2
-    i2 = 5
-    def __init__(self, *args, **kwargs):
-        print('Hello from init First', args, kwargs)
+    def __init__(self, function):
+        print("Hello, I'm here")
+        self.function = function
 
     def methodF(self, *args, **kwargs):
         print('Hello from {}'.format(self), args, kwargs)
 
+
 class Second(object):
     u = 2
+
     def methodS(self):
         print('This is method from Second')
 
-class Third(First, Second, object):
-    def __index__(self, i = 9):
-        self.i1 = i
 
+class Third(First, Second):
     def __call__(self, *args, **kwargs):
-      print(self.i, args, kwargs)
+        print("Hello, sir!")
+        self.function(*args, **kwargs)
 
